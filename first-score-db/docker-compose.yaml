@@ -6,14 +6,14 @@ services:
         ports:
             - "3000:3000"
         networks:
-            - first-score-api
+            - first-score
     first-score-db:
         image: first-score-db
         container_name: first-score-db
         ports:
             - "5932:5432"
         networks:
-            - first-score-db
+            - first-score
 networks:
     first-score:
         driver: bridge
