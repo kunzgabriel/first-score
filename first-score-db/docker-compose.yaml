@@ -1,0 +1,19 @@
+version: "3"
+services:
+    first-score-api:
+        image: first-score-api
+        container_name: first-score-api
+        ports:
+            - "3000:3000"
+        networks:
+            - first-score-api
+    first-score-db:
+        image: first-score-db
+        container_name: first-score-db
+        ports:
+            - "5932:5432"
+        networks:
+            - first-score-db
+networks:
+    first-score:
+        driver: bridge
