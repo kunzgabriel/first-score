@@ -1,8 +1,8 @@
-let gamesService = require('../services/games');
+let equipesService = require('../services/equipes');
 
-const postGames = async (req, res, next) => {
+const postEquipes = async (req, res, next) => {
     try {
-        await gamesService.postGames(req.body)
+        await equipesService.postEquipes(req.body)
             .then(ret => res.status(201).send(ret))
             .catch(err => res.status(500).send(err));
     } catch (err) {
@@ -10,9 +10,9 @@ const postGames = async (req, res, next) => {
     }
 }
 
-const getAllGames = async (req, res, next) => {
+const getAllEquipes = async (req, res, next) => {
     try {
-        await gamesService.getAllGames()
+        await equipesService.getAllEquipes()
             .then(ret => res.status(200).send(ret))
             .catch(err => res.status(500).send(err));
     } catch (err) {
@@ -20,9 +20,9 @@ const getAllGames = async (req, res, next) => {
     }
 }
 
-const getGameById = async (req, res, next) => {
+const getEquipeById = async (req, res, next) => {
     try {
-        await gamesService.getGameById(req.params)
+        await equipesService.getEquipeById(req.params)
             .then(ret => res.status(200).send(ret))
             .catch(err => res.status(500).send(err));
     } catch (err) {
@@ -30,9 +30,9 @@ const getGameById = async (req, res, next) => {
     }
 }
 
-const patchGame = async (req, res, next) => {
+const patchEquipe = async (req, res, next) => {
     try {
-        await gamesService.patchGame(req.body)
+        await equipesService.patchEquipe(req.body)
             .then(ret => res.status(201).send(ret))
             .catch(err => res.status(500).send(err));
     } catch (err) {
@@ -40,9 +40,9 @@ const patchGame = async (req, res, next) => {
     }
 }
 
-const deleteGame = async (req, res, next) => {
+const deleteEquipe = async (req, res, next) => {
     try {
-        await gamesService.deleteGame(req.params)
+        await equipesService.deleteEquipe(req.params)
             .then(ret => res.status(204).send(ret))
             .catch(err => res.status(500).send(err));
     } catch (err) {
@@ -50,8 +50,8 @@ const deleteGame = async (req, res, next) => {
     }
 }
 
-module.exports.getAllGames = getAllGames;
-module.exports.postGames = postGames;
-module.exports.patchGame = patchGame;
-module.exports.deleteGame = deleteGame;
-module.exports.getGameById = getGameById;
+module.exports.getAllEquipes = getAllEquipes;
+module.exports.postEquipes = postEquipes;
+module.exports.patchEquipe = patchEquipe;
+module.exports.deleteEquipe = deleteEquipe;
+module.exports.getEquipeById = getEquipeById;
